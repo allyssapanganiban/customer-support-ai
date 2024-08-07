@@ -28,78 +28,76 @@ User: "What types of questions can I expect in a technical interview?"
 AI: "Technical interviews often include coding challenges, algorithm questions, and system design problems. You can practice these on our platform by selecting the 'Coding Challenges' or 'System Design' sections."
 `
 
+export async function POST(req) {
+    console.log('OPENAI_API_KEY in route.js:', process.env.OPENAI_API_KEY);
+
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    const data = await req.json();
+  
+    const completion = await openai.chat.completions.create({
+      messages: [{ role: 'system', content: systemPrompt }, ...data],
+      model: 'gpt-4o-mini',
+      stream: true,
+    });
+  
+    const stream = new ReadableStream({
+      async start(controller) {
+        const encoder = new TextEncoder();
+        try {
+          for await (const chunk of completion) {
+            const content = chunk.choices[0]?.delta?.content;
+            if (content) {
+              const text = encoder.encode(content);
+              controller.enqueue(text);
+            }
+          }
+        } catch (err) {
+          controller.error(err);
+        } finally {
+          controller.close();
+        }
+      },
+    });
+  
+    return new NextResponse(stream);
+  }
+
+
+// Debugging
 // export async function POST(req) {
-//     const openai = new OpenAI();
-//     const data = await req.json();
+//     const apiKey = process.env.OPENAI_API_KEY;
+//     if (!apiKey) {
+//       throw new Error('The OPENAI_API_KEY environment variable is missing or empty');
+//     }
+  
+//     const openai = new OpenAI({ apiKey }); // Create a new instance of the OpenAI client with the apiKey
+//     const data = await req.json(); // Parse the JSON body of the incoming request
   
 //     const completion = await openai.chat.completions.create({
-//       messages: [{ role: 'system', content: systemPrompt }, ...data],
-//       model: 'gpt-4o-mini',
-//       stream: true,
+//       messages: [{ role: 'system', content: systemPrompt }, ...data], 
+//       model: 'gpt-4o-mini', 
+//       stream: true, 
 //     });
   
+
 //     const stream = new ReadableStream({
 //       async start(controller) {
-//         const encoder = new TextEncoder();
+//         const encoder = new TextEncoder(); 
 //         try {
 //           for await (const chunk of completion) {
 //             const content = chunk.choices[0]?.delta?.content;
 //             if (content) {
 //               const text = encoder.encode(content);
-//               controller.enqueue(text);
+//               controller.enqueue(text); 
 //             }
 //           }
 //         } catch (err) {
-//           controller.error(err);
+//           controller.error(err); 
 //         } finally {
-//           controller.close();
+//           controller.close(); 
 //         }
 //       },
 //     });
   
 //     return new NextResponse(stream);
 //   }
-
-export async function POST(req) {
-    try {
-      const openai = new OpenAI();
-      const data = await req.json();
-  
-      // Log the incoming request data
-      console.log('Received request data:', data);
-  
-      const completion = await openai.chat.completions.create({
-        messages: [{ role: 'system', content: systemPrompt }, ...data],
-        model: 'gpt-4o-mini',
-        stream: true,
-      });
-  
-      // Log the completion response
-      console.log('OpenAI completion response:', completion);
-  
-      const stream = new ReadableStream({
-        async start(controller) {
-          const encoder = new TextEncoder();
-          try {
-            for await (const chunk of completion) {
-              const content = chunk.choices[0]?.delta?.content;
-              if (content) {
-                const text = encoder.encode(content);
-                controller.enqueue(text);
-              }
-            }
-          } catch (err) {
-            console.error('Error while streaming response:', err);
-            controller.error(err);
-          } finally {
-            controller.close();
-          }
-        },
-      });
-  
-      return new NextResponse(stream);
-    } catch (error) {
-      console.error('Error handling request:', error);
-      return new NextResponse('Internal Server Error', { status: 500 });
-    }
-  }
