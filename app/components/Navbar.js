@@ -1,14 +1,13 @@
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
-// import logo from '../../app/assets/logo.png'
 
 const Navbar = () => {
   return (
     <AppBar position="static" sx={{ bgcolor: "transparent", boxShadow: "none" }}>
-      <Toolbar sx={{ justifyContent: "space-between", padding: "10px 20px" }}>
+      <Toolbar sx={{ justifyContent: "space-between", paddingX: "10px" }}>
         <Box display="flex" alignItems="center">
           <img src="/assets/logo.png" alt="Education Bot Logo" style={{ height: 40 }} />
-          <Typography variant="h6" component="div" sx={{ marginLeft: 0.2, color: "black", fontFamily: "Poppins"}}>
-          <span style={{ fontWeight: 'bold' }}>Education Bot</span>
+          <Typography variant="h6" component="div" sx={{fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
+          Education Bot
           </Typography>
         </Box>
         <Button 
@@ -20,6 +19,7 @@ const Navbar = () => {
                 textTransform: "none", 
                 boxShadow: "none",
                 padding: "8px 25px",
+                fontWeight: "bold",
                 "&:hover": {
                     bgcolor: "#4DA9B6",
                     boxShadow: "none",
