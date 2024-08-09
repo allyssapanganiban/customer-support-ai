@@ -8,14 +8,13 @@ export default function Home() {
     {
       role: "assistant",
       content:
-        "Hi! I'm your AI assistant over at the University of Funsies. How can I help you today?",
+        "Hi there! I'm your AI assistant over here at University of Funsies. How can I help you today?",
     },
   ]);
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const messagesEndRef = useRef(null);
-
 
   const [convHistory, setConvHistory] = useState([]);
 
@@ -33,14 +32,13 @@ export default function Home() {
     setIsLoading(true);
 
     const userMessage = { role: "user", content: message };
-    setMessage(""); 
+    setMessage("");
     setMessages((prevMessages) => [
       ...prevMessages,
       userMessage,
-      { role: "assistant", content: "..." }, 
+      { role: "assistant", content: "..." },
     ]);
 
-    // Update conversation history
     setConvHistory((prevHistory) => [
       ...prevHistory,
       { role: "user", content: message },
@@ -54,7 +52,7 @@ export default function Home() {
         },
         body: JSON.stringify({
           question: message,
-          conv_history: convHistory, 
+          conv_history: convHistory,
         }),
       });
 
@@ -64,20 +62,19 @@ export default function Home() {
 
       const data = await response.json();
 
-
       setConvHistory((prevHistory) => [
         ...prevHistory,
         { role: "assistant", content: data.answer },
       ]);
 
       setMessages((prevMessages) => [
-        ...prevMessages.slice(0, -1), 
+        ...prevMessages.slice(0, -1),
         { role: "assistant", content: data.answer },
       ]);
     } catch (error) {
       console.error("Error:", error);
       setMessages((prevMessages) => [
-        ...prevMessages.slice(0, -1), 
+        ...prevMessages.slice(0, -1),
         {
           role: "assistant",
           content:
