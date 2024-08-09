@@ -150,6 +150,20 @@ export default function Home() {
           paddingX={1}
           sx={{
             overflowX: 'hidden', // Prevent horizontal scrolling
+            '&::-webkit-scrollbar': {
+              width: '8px', // Set the width of the scrollbar
+            },
+            '&::-webkit-scrollbar-track': {
+              background: '#f1f1f1', // Track color
+              borderRadius: '10px', // Rounded corners on track
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: '#888', // Thumb color
+              borderRadius: '10px', // Rounded corners on thumb
+            },
+            '&::-webkit-scrollbar-thumb:hover': {
+              background: '#555', // Thumb color on hover
+            },
           }}
         >
           {messages.map((message, index) => (
