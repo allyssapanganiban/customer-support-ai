@@ -5,6 +5,17 @@
   padding: 0;
   margin: 0;
   font-family: 'Poppins', sans-serif;
+}
 
+:root {
+  --primary: #63C2CF;
+  --background1: #C1EDF3;
+  --background2: #F4EFC5;
+  --dark-gray: #9B9B9B;
+  --light-gray: #B5B5B5;
+}
+
+body {
+  background-image: linear-gradient(var(--background1), var(--background2));
 }
 

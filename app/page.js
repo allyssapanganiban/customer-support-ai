@@ -1,6 +1,8 @@
 "use client";
 
-import { Box, Button, Stack, TextField, CircularProgress, IconButton } from "@mui/material";
+import './globals.css'
+import Navbar from './Components/Navbar'
+import { Box, Button, Stack, TextField, CircularProgress, IconButton, Typography } from "@mui/material";
 import { ArrowUpward } from "@mui/icons-material";
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
@@ -104,17 +106,37 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      bgcolor="#f0f0f0"
     >
+      <Navbar />
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        flexGrow={1}
+        maxWidth="520px"
+        width="100%"
+        textAlign="center"
+      >
+        <Typography variant="h3" sx={{ fontWeight: "bold", marginTop: 3, marginBottom: 1, fontFamily: "Poppins", lineHeight: "40px" }}>
+          Hi, [Full Name]!
+        </Typography>
+        <Typography variant="h4" sx={{ fontWeight: "bold", marginBottom: 0.5, fontFamily: "Poppins", color: "#444444" }}>
+          Can I help you with anything?
+        </Typography>
+        <Typography sx={{  marginBottom: 1, fontFamily: "Poppins", fontSize: "13px", color: "#444444"}}>
+          Ready to assist you with anything you need in your academic journey. Let's get started!
+        </Typography>
+      </Box>
       <Stack
         direction={"column"}
         width="100%"
-        maxWidth="500px"
+        maxWidth="600px"
         height="100%"
-        maxHeight="700px"
-        borderRadius={2}
-        boxShadow={3}
-        bgcolor="white"
+        maxHeight="400px"
+        // borderRadius={2}
+        // boxShadow={3}
+        // bgcolor="white"
         p={2}
         spacing={3}
       >
@@ -124,6 +146,11 @@ export default function Home() {
           flexGrow={1}
           overflow="auto"
           maxHeight="100%"
+          fontSize={14}
+          paddingX={1}
+          sx={{
+            overflowX: 'hidden', // Prevent horizontal scrolling
+          }}
         >
           {messages.map((message, index) => (
             <Box
@@ -136,11 +163,12 @@ export default function Home() {
               <Box
                 bgcolor={
                   message.role === "assistant"
-                    ? "primary.main"
-                    : "secondary.main"
+                    ? "#C1EDF3"
+                    : "white"
                 }
-                color="white"
-                borderRadius={2}
+                color="black"
+                borderRadius={5}
+                boxShadow={5}
                 p={2}
                 maxWidth="80%"
               >
@@ -157,9 +185,9 @@ export default function Home() {
           borderRadius={10}
           boxShadow={3}
           sx={{
-            maxWidth: "500px",
+            maxWidth: "600px",
             width: "100%",
-            maxHeight: "60px",
+            maxHeight: "50px",
             bgcolor: "white",
           }}
         >
@@ -176,14 +204,14 @@ export default function Home() {
                 borderRadius: "25px",
                 bgcolor: "white",
                 fontFamily: 'Poppins',
-                fontSize: "17px",
+                fontSize: "14px",
                 boxShadow: "none",
                 "& fieldset": {
                   border: "none",
                 },
               },
               "& .MuiInputBase-input": {
-                padding: "15px 20px",
+                padding: "13px 20px",
               },
             }}
           />
@@ -196,7 +224,7 @@ export default function Home() {
               width: "45px",
               height: "45px",
               color: "black",
-              marginLeft: "10px",
+              // marginLeft: "-20px",
               "&:hover": {
                 bgcolor: "#4DA9B6",
             },
