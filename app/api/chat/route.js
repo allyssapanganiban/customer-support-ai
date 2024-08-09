@@ -28,41 +28,6 @@
 // AI: "Technical interviews often include coding challenges, algorithm questions, and system design problems. You can practice these on our platform by selecting the 'Coding Challenges' or 'System Design' sections."
 // `
 
-<<<<<<< HEAD
-export async function POST(req) {
-    console.log('OPENAI_API_KEY in route.js:', process.env.OPENAI_API_KEY);
-
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-    const data = await req.json();
-  
-    const completion = await openai.chat.completions.create({
-      messages: [{ role: 'system', content: systemPrompt }, ...data],
-      model: 'gpt-4o-mini',
-      stream: true,
-    });
-  
-    const stream = new ReadableStream({
-      async start(controller) {
-        const encoder = new TextEncoder();
-        try {
-          for await (const chunk of completion) {
-            const content = chunk.choices[0]?.delta?.content;
-            if (content) {
-              const text = encoder.encode(content);
-              controller.enqueue(text);
-            }
-          }
-        } catch (err) {
-          controller.error(err);
-        } finally {
-          controller.close();
-        }
-      },
-    });
-  
-    return new NextResponse(stream);
-  }
-=======
 // export async function POST(req) {
 //     console.log('OPENAI_API_KEY in route.js:', process.env.OPENAI_API_KEY);
 
@@ -134,4 +99,3 @@ export async function POST(req) {
 
 // //     return new NextResponse(stream);
 // //   }
->>>>>>> b87d5c55c61ef1911cf30f825e598c1dad546a1f
