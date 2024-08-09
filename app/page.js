@@ -1,7 +1,9 @@
 "use client";
 
-import { Box, Button, Stack, TextField, CircularProgress } from "@mui/material";
+import { Box, Button, Stack, TextField, CircularProgress, IconButton } from "@mui/material";
+import { ArrowUpward } from "@mui/icons-material";
 import { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 
 export default function Home() {
   const [messages, setMessages] = useState([
@@ -142,29 +144,66 @@ export default function Home() {
                 p={2}
                 maxWidth="80%"
               >
-                {message.content}
+                <ReactMarkdown>{message.content}</ReactMarkdown>
               </Box>
             </Box>
           ))}
           <div ref={messagesEndRef} />
         </Stack>
-        <Stack direction={"row"} spacing={2} alignItems="center">
+        <Stack
+          direction={"row"} 
+          spacing={2} 
+          alignItems="center"
+          borderRadius={10}
+          boxShadow={3}
+          sx={{
+            maxWidth: "500px",
+            width: "100%",
+            maxHeight: "60px",
+            bgcolor: "white",
+          }}
+        >
           <TextField
-            label="Type your message"
+            placeholder="Ask Education Bot anything.."
             fullWidth
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyPress={handleKeyPress}
             disabled={isLoading}
+            variant="outlined"
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "25px",
+                bgcolor: "white",
+                fontFamily: 'Poppins',
+                fontSize: "17px",
+                boxShadow: "none",
+                "& fieldset": {
+                  border: "none",
+                },
+              },
+              "& .MuiInputBase-input": {
+                padding: "15px 20px",
+              },
+            }}
           />
-          <Button
-            variant="contained"
+          <IconButton
             onClick={sendMessage}
             disabled={isLoading || !message.trim()}
-            endIcon={isLoading ? <CircularProgress size={20} /> : null}
+            sx={{
+              bgcolor: "#63C2CF",
+              borderRadius: "50%",
+              width: "45px",
+              height: "45px",
+              color: "black",
+              marginLeft: "10px",
+              "&:hover": {
+                bgcolor: "#4DA9B6",
+            },
+            }}
           >
-            Send
-          </Button>
+          {isLoading ? <CircularProgress size={24} /> : <ArrowUpward />}
+        </IconButton>
         </Stack>
       </Stack>
     </Box>
