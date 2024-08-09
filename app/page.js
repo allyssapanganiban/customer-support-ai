@@ -8,7 +8,7 @@ export default function Home() {
     {
       role: "assistant",
       content:
-        "Hi there! I'm your AI assistant over here at University of Funsies. How can I help you today?",
+        "Hi there! I'm your AI assistant here at University of Funsies. How can I help you today?",
     },
   ]);
   const [message, setMessage] = useState("");
