@@ -22,6 +22,7 @@ const Navbar = () => {
                 padding: "8px 25px",
                 "&:hover": {
                     bgcolor: "#4DA9B6",
+                    boxShadow: "none",
             },
             }}>
           Sign out
