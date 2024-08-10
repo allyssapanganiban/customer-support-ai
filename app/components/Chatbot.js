@@ -122,7 +122,7 @@ export default function Home() {
         <Typography variant="h4" sx={{ fontWeight: "bold", marginBottom: 0.5, fontFamily: "Poppins", color: "#444444" }}>
           Can I help you with anything?
         </Typography>
-        <Typography sx={{  marginBottom: 1, fontFamily: "Poppins", fontSize: "13px", color: "#444444"}}>
+        <Typography sx={{  marginBottom: 1, fontFamily: "Poppins", fontSize: "14px", color: "#444444"}}>
           Ready to assist you with anything you need in your academic journey. Let's get started!
         </Typography>
       </Box>
