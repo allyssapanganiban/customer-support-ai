@@ -18,24 +18,27 @@ const Login = () => {
         alignItems="flex-start"
         justifyContent="center"
         p={5}
-        width="40%"
+        width="45%"
         height="100%"
+        padding="55px"
       >
         {/* Logo */}
-        <Typography variant="h5" fontWeight="600" color="primary.main" gutterBottom>
-          <img src="/path-to-logo.png" alt="Logo" style={{ marginRight: 10 }} />
+        <Box display="flex" alignItems="center" marginBottom="25px">
+          <img src="/assets/logo.png" alt="Education Bot Logo" style={{ height: 40 }} />
+          <Typography variant="h6" component="div" sx={{fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
           Education Bot
-        </Typography>
+          </Typography>
+        </Box>
 
         {/* Welcome Back */}
-        <Typography variant="h4" fontWeight="600" gutterBottom>
+        <Typography variant="h4" gutterBottom sx={{fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
           Welcome back!
         </Typography>
 
         {/* Sign Up Link */}
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2" fontFamily="Poppins">
           New to Education Bot?{" "}
-          <Link href="#" color="primary.main">
+          <Link href="#" color="#63C2CF" fontWeight="bold">
             Create an account.
           </Link>
         </Typography>
@@ -47,7 +50,9 @@ const Login = () => {
           fullWidth
           margin="normal"
           InputProps={{
-            sx: { borderRadius: "10px" },
+            sx: { 
+                borderRadius: "10px" 
+            },
           }}
           placeholder="Enter your email"
         />
@@ -70,7 +75,18 @@ const Login = () => {
           variant="contained"
           color="primary"
           fullWidth
-          sx={{ marginTop: 3, borderRadius: "10px", paddingY: 1 }}
+          boxShadow="none"
+          sx={{ marginTop: 3,
+            borderRadius: "10px",
+            paddingY: 1.5,
+            textTransform: "none",
+            fontFamily: "Poppins",
+            bgcolor: "#63C2CF",
+            "&:hover": {
+                    bgcolor: "#4DA9B6",
+                    boxShadow: "none",
+                },
+        }}
         >
           Sign in
         </Button>
@@ -82,12 +98,19 @@ const Login = () => {
           sx={{
             marginTop: 2,
             borderRadius: "10px",
-            paddingY: 1,
+            paddingY: 1.5,
             color: "black",
-            borderColor: "lightgray",
+            borderColor: "#63C2CF",
+            borderWidth: "2px",
             textTransform: "none",
+            fontFamily: "Poppins",
+            fontWeight: "bold",
+            "&:hover": {
+                    borderColor: "#63C2CF",
+                    borderWidth: "2px",
+                },
           }}
-          startIcon={<img src="/path-to-google-icon.png" alt="Google Icon" style={{ height: 20 }} />}
+          startIcon={<img src="/assets/google-icon.png" alt="Google Icon" style={{ height: 20 }} />}
         >
           Sign in with Google
         </Button>
