@@ -18,7 +18,7 @@ const Login = () => {
         alignItems="flex-start"
         justifyContent="center"
         p={5}
-        width="45%"
+        width="40%"
         height="100%"
         padding="55px"
       >
@@ -36,38 +36,93 @@ const Login = () => {
         </Typography>
 
         {/* Sign Up Link */}
-        <Typography variant="body2" fontFamily="Poppins">
+        <Typography variant="body2" fontFamily="Poppins" marginBottom="30px">
           New to Education Bot?{" "}
           <Link href="#" color="#63C2CF" fontWeight="bold">
             Create an account.
           </Link>
         </Typography>
 
-        {/* Email Input */}
+        {/* Name Input */}
+        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
+            Name
+        </Typography>
         <TextField
-          label="Email"
+          placeholder="Enter your name"
           variant="outlined"
           fullWidth
           margin="normal"
+          InputLabelProps={{
+            sx: {
+              fontFamily: "Poppins",
+            }
+          }}
           InputProps={{
             sx: { 
-                borderRadius: "10px" 
+                fontSize: '14px',
+                borderRadius: "10px",
+                fontFamily: "Poppins",
+                marginBottom: "20px",
+                "& .MuiInputBase-input": {
+                    paddingY: "8px",
+                },
             },
           }}
+        />
+
+        {/* Email Input */}
+        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
+            Email
+        </Typography>
+        <TextField
           placeholder="Enter your email"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            sx: {
+                fontSize: "14px",
+                fontFamily: "Poppins",
+            }
+          }}
+          InputProps={{
+            sx: { 
+                fontSize: '14px',
+                borderRadius: "10px",
+                fontFamily: "Poppins",
+                marginBottom: "20px",
+                "& .MuiInputBase-input": {
+                    paddingY: "8px",
+                },
+            },
+          }}
         />
 
         {/* Password Input */}
+        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
+            Password
+        </Typography>
         <TextField
-          label="Password"
+          placeholder="Enter your password"
           variant="outlined"
           type="password"
           fullWidth
           margin="normal"
-          InputProps={{
-            sx: { borderRadius: "10px" },
+          InputLabelProps={{
+            sx: {
+              fontFamily: "Poppins",
+            }
           }}
-          placeholder="Enter your password"
+          InputProps={{
+            sx: { 
+                fontSize: '14px',
+                borderRadius: "10px",
+                fontFamily: "Poppins",
+                "& .MuiInputBase-input": {
+                    paddingY: "8px",
+                },
+            },
+          }}
         />
 
         {/* Sign In Button */}
