@@ -1,5 +1,12 @@
-import Navbar from './Navbar'
-import { Box, Stack, TextField, CircularProgress, IconButton, Typography } from "@mui/material";
+import Navbar from "./Navbar";
+import {
+  Box,
+  Stack,
+  TextField,
+  CircularProgress,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import { ArrowUpward } from "@mui/icons-material";
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
@@ -9,7 +16,7 @@ export default function Home() {
     {
       role: "assistant",
       content:
-        "Hi there! I'm your AI assistant here at University of Funsies. How can I help you today?",
+        "Hi there! I am your AI assistant here at University of Funsies. How can I help you today?",
     },
   ]);
   const [message, setMessage] = useState("");
@@ -79,7 +86,7 @@ export default function Home() {
         {
           role: "assistant",
           content:
-            "I'm sorry, but I encountered an error. Please try again later.",
+            "I am sorry, but I encountered an error. Please try again later.",
         },
       ]);
     } finally {
@@ -103,7 +110,7 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      paddingX= "10px"
+      paddingX="10px"
     >
       <Navbar />
       <Box
@@ -116,14 +123,39 @@ export default function Home() {
         width="100%"
         textAlign="center"
       >
-        <Typography variant="h3" sx={{ fontWeight: "bold", marginTop: 3, marginBottom: 1, fontFamily: "Poppins", lineHeight: "40px" }}>
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: "bold",
+            marginTop: 3,
+            marginBottom: 1,
+            fontFamily: "Poppins",
+            lineHeight: "40px",
+          }}
+        >
           Hi, [Full Name]!
         </Typography>
-        <Typography variant="h4" sx={{ fontWeight: "bold", marginBottom: 0.5, fontFamily: "Poppins", color: "#444444" }}>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: "bold",
+            marginBottom: 0.5,
+            fontFamily: "Poppins",
+            color: "#444444",
+          }}
+        >
           Can I help you with anything?
         </Typography>
-        <Typography sx={{  marginBottom: 1, fontFamily: "Poppins", fontSize: "14px", color: "#444444"}}>
-          Ready to assist you with anything you need in your academic journey. Let's get started!
+        <Typography
+          sx={{
+            marginBottom: 1,
+            fontFamily: "Poppins",
+            fontSize: "14px",
+            color: "#444444",
+          }}
+        >
+          Ready to assist you with anything you need in your academic journey.
+          Let us get started!
         </Typography>
       </Box>
       <Stack
@@ -148,20 +180,20 @@ export default function Home() {
           fontSize={14}
           paddingX={1}
           sx={{
-            overflowX: 'hidden', // Prevent horizontal scrolling
-            '&::-webkit-scrollbar': {
-              width: '8px',
+            overflowX: "hidden", // Prevent horizontal scrolling
+            "&::-webkit-scrollbar": {
+              width: "8px",
             },
-            '&::-webkit-scrollbar-track': {
-              background: '#f1f1f1', 
-              borderRadius: '10px', 
+            "&::-webkit-scrollbar-track": {
+              background: "#f1f1f1",
+              borderRadius: "10px",
             },
-            '&::-webkit-scrollbar-thumb': {
-              background: '#888', 
-              borderRadius: '10px', 
+            "&::-webkit-scrollbar-thumb": {
+              background: "#888",
+              borderRadius: "10px",
             },
-            '&::-webkit-scrollbar-thumb:hover': {
-              background: '#555', 
+            "&::-webkit-scrollbar-thumb:hover": {
+              background: "#555",
             },
           }}
         >
@@ -174,11 +206,7 @@ export default function Home() {
               }
             >
               <Box
-                bgcolor={
-                  message.role === "assistant"
-                    ? "#C1EDF3"
-                    : "white"
-                }
+                bgcolor={message.role === "assistant" ? "#C1EDF3" : "white"}
                 color="black"
                 borderRadius={5}
                 boxShadow={5}
@@ -192,8 +220,8 @@ export default function Home() {
           <div ref={messagesEndRef} />
         </Stack>
         <Stack
-          direction={"row"} 
-          spacing={2} 
+          direction={"row"}
+          spacing={2}
           alignItems="center"
           borderRadius={10}
           boxShadow={3}
@@ -216,7 +244,7 @@ export default function Home() {
               "& .MuiOutlinedInput-root": {
                 borderRadius: "25px",
                 bgcolor: "white",
-                fontFamily: 'Poppins',
+                fontFamily: "Poppins",
                 fontSize: "14px",
                 boxShadow: "none",
                 "& fieldset": {
@@ -240,11 +268,11 @@ export default function Home() {
               // marginLeft: "-20px",
               "&:hover": {
                 bgcolor: "#4DA9B6",
-            },
+              },
             }}
           >
-          {isLoading ? <CircularProgress size={24} /> : <ArrowUpward />}
-        </IconButton>
+            {isLoading ? <CircularProgress size={24} /> : <ArrowUpward />}
+          </IconButton>
         </Stack>
       </Stack>
     </Box>

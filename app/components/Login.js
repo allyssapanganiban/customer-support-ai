@@ -24,14 +24,26 @@ const Login = () => {
       >
         {/* Logo */}
         <Box display="flex" alignItems="center" marginBottom="25px">
-          <img src="/assets/logo.png" alt="Education Bot Logo" style={{ height: 40 }} />
-          <Typography variant="h6" component="div" sx={{fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
-          Education Bot
+          <img
+            src="/assets/logo.png"
+            alt="Education Bot Logo"
+            style={{ height: 40 }}
+          />
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
+          >
+            Education Bot
           </Typography>
         </Box>
 
         {/* Welcome Back */}
-        <Typography variant="h4" gutterBottom sx={{fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
+        >
           Welcome back!
         </Typography>
 
@@ -44,8 +56,16 @@ const Login = () => {
         </Typography>
 
         {/* Name Input */}
-        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
-            Name
+        <Typography
+          sx={{
+            lineHeight: "0px",
+            fontSize: "14px",
+            fontWeight: "bold",
+            color: "black",
+            fontFamily: "Poppins",
+          }}
+        >
+          Name
         </Typography>
         <TextField
           placeholder="Enter your name"
@@ -55,24 +75,32 @@ const Login = () => {
           InputLabelProps={{
             sx: {
               fontFamily: "Poppins",
-            }
+            },
           }}
           InputProps={{
-            sx: { 
-                fontSize: '14px',
-                borderRadius: "10px",
-                fontFamily: "Poppins",
-                marginBottom: "20px",
-                "& .MuiInputBase-input": {
-                    paddingY: "8px",
-                },
+            sx: {
+              fontSize: "14px",
+              borderRadius: "10px",
+              fontFamily: "Poppins",
+              marginBottom: "20px",
+              "& .MuiInputBase-input": {
+                paddingY: "8px",
+              },
             },
           }}
         />
 
         {/* Email Input */}
-        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
-            Email
+        <Typography
+          sx={{
+            lineHeight: "0px",
+            fontSize: "14px",
+            fontWeight: "bold",
+            color: "black",
+            fontFamily: "Poppins",
+          }}
+        >
+          Email
         </Typography>
         <TextField
           placeholder="Enter your email"
@@ -81,26 +109,34 @@ const Login = () => {
           margin="normal"
           InputLabelProps={{
             sx: {
-                fontSize: "14px",
-                fontFamily: "Poppins",
-            }
+              fontSize: "14px",
+              fontFamily: "Poppins",
+            },
           }}
           InputProps={{
-            sx: { 
-                fontSize: '14px',
-                borderRadius: "10px",
-                fontFamily: "Poppins",
-                marginBottom: "20px",
-                "& .MuiInputBase-input": {
-                    paddingY: "8px",
-                },
+            sx: {
+              fontSize: "14px",
+              borderRadius: "10px",
+              fontFamily: "Poppins",
+              marginBottom: "20px",
+              "& .MuiInputBase-input": {
+                paddingY: "8px",
+              },
             },
           }}
         />
 
         {/* Password Input */}
-        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
-            Password
+        <Typography
+          sx={{
+            lineHeight: "0px",
+            fontSize: "14px",
+            fontWeight: "bold",
+            color: "black",
+            fontFamily: "Poppins",
+          }}
+        >
+          Password
         </Typography>
         <TextField
           placeholder="Enter your password"
@@ -111,16 +147,16 @@ const Login = () => {
           InputLabelProps={{
             sx: {
               fontFamily: "Poppins",
-            }
+            },
           }}
           InputProps={{
-            sx: { 
-                fontSize: '14px',
-                borderRadius: "10px",
-                fontFamily: "Poppins",
-                "& .MuiInputBase-input": {
-                    paddingY: "8px",
-                },
+            sx: {
+              fontSize: "14px",
+              borderRadius: "10px",
+              fontFamily: "Poppins",
+              "& .MuiInputBase-input": {
+                paddingY: "8px",
+              },
             },
           }}
         />
@@ -131,17 +167,18 @@ const Login = () => {
           color="primary"
           fullWidth
           boxShadow="none"
-          sx={{ marginTop: 3,
+          sx={{
+            marginTop: 3,
             borderRadius: "10px",
             paddingY: 1.5,
             textTransform: "none",
             fontFamily: "Poppins",
             bgcolor: "#63C2CF",
             "&:hover": {
-                    bgcolor: "#4DA9B6",
-                    boxShadow: "none",
-                },
-        }}
+              bgcolor: "#4DA9B6",
+              boxShadow: "none",
+            },
+          }}
         >
           Sign in
         </Button>
@@ -161,11 +198,17 @@ const Login = () => {
             fontFamily: "Poppins",
             fontWeight: "bold",
             "&:hover": {
-                    borderColor: "#63C2CF",
-                    borderWidth: "2px",
-                },
+              borderColor: "#63C2CF",
+              borderWidth: "2px",
+            },
           }}
-          startIcon={<img src="/assets/google-icon.png" alt="Google Icon" style={{ height: 20 }} />}
+          startIcon={
+            <img
+              src="/assets/google-icon.png"
+              alt="Google Icon"
+              style={{ height: 20 }}
+            />
+          }
         >
           Sign in with Google
         </Button>
@@ -176,13 +219,13 @@ const Login = () => {
         width="60%"
         height="100%"
         sx={{
-            bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
-            background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
-            borderRadius: "20px",
+          bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
+          background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
+          borderRadius: "20px",
         }}
       />
     </Box>
-        {/* <img
+    /* <img
         src="/assets/about.png"
         alt="Description of image"
         style={{
@@ -192,7 +235,7 @@ const Login = () => {
           objectFit: "cover",
         }}
       />
-    </Box> */}
+    </Box> */
   );
 };
 
