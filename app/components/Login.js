@@ -172,17 +172,17 @@ const Login = () => {
       </Box>
 
       {/* Right Side - Image/Gradient */}
-      {/* <Box
+      <Box
         width="60%"
         height="100%"
         sx={{
-          bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
-          background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
-          borderRadius: "20px",
+            bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
+            background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
+            borderRadius: "20px",
         }}
       />
-    </Box> */}
-        <img
+    </Box>
+        {/* <img
         src="/assets/about.png"
         alt="Description of image"
         style={{
@@ -192,7 +192,7 @@ const Login = () => {
           objectFit: "cover",
         }}
       />
-    </Box>
+    </Box> */}
   );
 };
 
