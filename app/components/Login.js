@@ -33,7 +33,7 @@ const Login = () => {
       router.push("/");
       setError("");
     } catch (err) {
-      setError("Failed to authenticate. Please check your credentials.");
+      setError("Invalid credentials. Please try again.");
     }
   };
 
@@ -214,6 +214,16 @@ const Login = () => {
           }}
         />
 
+        {/* Error Message */}
+        {error && (
+          <Typography
+            color="error"
+            sx={{ marginBottom: 2, fontFamily: "Poppins", fontWeight: "light" }}
+          >
+            {error}
+          </Typography>
+        )}
+
         {/* Sign In/Sign Up Button */}
         <Button
           variant="contained"
@@ -236,14 +246,6 @@ const Login = () => {
         >
           {isSignUp ? "Sign up" : "Sign in"}
         </Button>
-        {error && (
-          <Typography
-            color="error"
-            sx={{ marginTop: 2, fontFamily: "Poppins" }}
-          >
-            {error}
-          </Typography>
-        )}
       </Box>
 
       {/* Right Side - Image/Gradient */}
