@@ -30,7 +30,6 @@ AI: "Technical interviews often include coding challenges, algorithm questions, 
 
 export async function POST(req) {
     console.log('OPENAI_API_KEY in route.js:', process.env.OPENAI_API_KEY);
-
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const data = await req.json();
 
