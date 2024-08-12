@@ -185,22 +185,23 @@ const Login = () => {
         <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins", marginBottom: "5px" }}>
           Introducing
         </Typography>
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "15px" }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "20px" }}>
           Education Bot
         </Typography>
         <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5" }}>
           Effortlessly navigate your academic journey with our AI-driven customer support bot.
         </Typography>
-        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5", marginTop: "10px" }}>
+        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5", marginTop: "15px", marginBottom: "30px" }}>
           Whether you need help with course enrollment deadlines, finding the right courses, or learning more about professors, our smart assistant is here to provide instant, accurate answers.
         </Typography>
         <img
             src="/assets/about.png"
             alt="Description of image"
             style={{
-                width: "60%",
-                height: "40%",
-                borderRadius: "20px",
+                width: "100%",
+                height: "100%",
+                alignContent: "center",
+                alignItems: "center",
                 // objectFit: "cover",
             }}
         />
