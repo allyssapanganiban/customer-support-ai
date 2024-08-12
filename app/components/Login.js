@@ -1,7 +1,10 @@
 import React from "react";
-import { Box, Typography, TextField, Button, Link, Stack } from "@mui/material";
+import { Box, Typography, TextField, Button, Link, Stack, useMediaQuery, useTheme } from "@mui/material";
 
 const Login = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <Box
       display="flex"
@@ -9,7 +12,7 @@ const Login = () => {
       alignItems="center"
       justifyContent="center"
       height="100vh"
-      bgcolor="white"
+      bgcolor={isSmallScreen ? "linear-gradient(to bottom, #C1EDF3, #F4EFC5)" : "white"}
     >
       {/* Left Side - Login Form */}
       <Box
@@ -18,7 +21,7 @@ const Login = () => {
         alignItems="flex-start"
         justifyContent="center"
         p={5}
-        width="40%"
+        width={isSmallScreen ? "80%" : "40%"}
         height="100%"
         padding="55px"
       >
@@ -130,18 +133,19 @@ const Login = () => {
           variant="contained"
           color="primary"
           fullWidth
-          boxShadow="none"
-          sx={{ marginTop: 3,
+          sx={{ 
+            marginTop: 3,
             borderRadius: "10px",
             paddingY: 1.5,
             textTransform: "none",
             fontFamily: "Poppins",
             bgcolor: "#63C2CF",
+            boxShadow: "none",
             "&:hover": {
                     bgcolor: "#4DA9B6",
                     boxShadow: "none",
                 },
-        }}
+          }}
         >
           Sign in
         </Button>
@@ -173,8 +177,9 @@ const Login = () => {
 
       {/* Right Side - Image/Gradient */}
       <Box
-        width="60%"
-        height="100%"
+        width={isSmallScreen ? "0" : "60%"}
+        height={isSmallScreen ? "0" : "100%"}
+        display={isSmallScreen ? "none" : "block"}
         sx={{
           bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
           background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
@@ -182,27 +187,27 @@ const Login = () => {
           padding: "55px",
         }}
       >
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins", marginBottom: "5px" }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
           Introducing
         </Typography>
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "20px" }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "10px" }}>
           Education Bot
         </Typography>
-        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5" }}>
+        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "#444444", fontSize: "15px", lineHeight: "1.5" }}>
           Effortlessly navigate your academic journey with our AI-driven customer support bot.
         </Typography>
-        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5", marginTop: "15px", marginBottom: "30px" }}>
+        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "#444444", fontSize: "15px", lineHeight: "1.5", marginTop: "10px", marginBottom: "30px" }}>
           Whether you need help with course enrollment deadlines, finding the right courses, or learning more about professors, our smart assistant is here to provide instant, accurate answers.
         </Typography>
         <img
             src="/assets/about.png"
             alt="Description of image"
             style={{
-                width: "100%",
-                height: "100%",
-                alignContent: "center",
-                alignItems: "center",
-                // objectFit: "cover",
+                maxWidth: "65%",
+                maxHeight: "75%",
+                display: "block",
+                margin: "0 auto",
+                objectFit: "contain",
             }}
         />
       </Box>

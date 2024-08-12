@@ -23,7 +23,7 @@ const Navbar = () => {
                 "&:hover": {
                     bgcolor: "#4DA9B6",
                     boxShadow: "none",
-            },
+                },
             }}>
           Sign out
         </Button>
