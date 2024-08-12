@@ -177,20 +177,21 @@ const Login = () => {
         height="100%"
         sx={{
           bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
+          background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
           borderRadius: "20px",
           padding: "55px",
         }}
       >
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins", marginBottom: "20px" }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins", marginBottom: "10px" }}>
           Introducing
         </Typography>
         <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "20px" }}>
           Education Bot
         </Typography>
-        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "18px", lineHeight: "1.5" }}>
+        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5" }}>
           Effortlessly navigate your academic journey with our AI-driven customer support bot.
         </Typography>
-        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "18px", lineHeight: "1.5", marginTop: "10px" }}>
+        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5", marginTop: "10px" }}>
           Whether you need help with course enrollment deadlines, finding the right courses, or learning more about professors, our smart assistant is here to provide instant, accurate answers.
         </Typography>
       </Box>
