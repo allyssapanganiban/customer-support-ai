@@ -21,7 +21,7 @@ const Login = () => {
         alignItems="flex-start"
         justifyContent="center"
         p={5}
-        width={isSmallScreen ? "80%" : "40%"}
+        width={isSmallScreen ? "90%" : "40%"}
         height="100%"
         padding="55px"
       >
