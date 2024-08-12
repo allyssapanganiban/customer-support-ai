@@ -4,10 +4,8 @@ import { useRouter } from "next/navigation";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../utils/firebaseConfig";
-import React from "react";
 import {
   Box,
   Typography,
@@ -39,14 +37,6 @@ const Login = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-      setError("");
-    } catch (err) {
-      setError("Failed to sign in with Google.");
-    }
-  };
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -98,14 +88,13 @@ const Login = () => {
         </Typography>
 
         {/* Sign Up Link */}
-        {/* Sign Up Link */}
         <Typography variant="body2" fontFamily="Poppins" marginBottom="30px">
           {isSignUp ? "Already have an account? " : "New to Education Bot? "}
           <Link
-            href="#"
             onClick={() => setIsSignUp(!isSignUp)}
             color="#63C2CF"
             fontWeight="bold"
+            style={{ cursor: "pointer" }}
           >
             {isSignUp ? "Sign in." : "Create an account."}
           </Link>
@@ -149,6 +138,7 @@ const Login = () => {
             />
           </>
         )}
+
         {/* Email Input */}
         <Typography
           sx={{
@@ -162,10 +152,12 @@ const Login = () => {
           Email
         </Typography>
         <TextField
-          placeholder="Enter your name"
+          placeholder="Enter your email"
           variant="outlined"
           fullWidth
           margin="normal"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           InputLabelProps={{
             sx: {
               fontSize: "14px",
@@ -203,6 +195,8 @@ const Login = () => {
           type="password"
           fullWidth
           margin="normal"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           InputLabelProps={{
             sx: {
               fontFamily: "Poppins",
@@ -220,13 +214,12 @@ const Login = () => {
           }}
         />
 
-        {/* Sign In Button */}
+        {/* Sign In/Sign Up Button */}
         <Button
           variant="contained"
           color="primary"
           fullWidth
           onClick={handleSubmit}
-          boxShadow="none"
           sx={{
             marginTop: 3,
             borderRadius: "10px",
@@ -235,86 +228,96 @@ const Login = () => {
             fontFamily: "Poppins",
             bgcolor: "#63C2CF",
             boxShadow: "none",
-            boxShadow: "none",
             "&:hover": {
               bgcolor: "#4DA9B6",
               boxShadow: "none",
             },
           }}
         >
-          Sign in
+          {isSignUp ? "Sign up" : "Sign in"}
         </Button>
+        {error && (
+          <Typography
+            color="error"
+            sx={{ marginTop: 2, fontFamily: "Poppins" }}
+          >
+            {error}
+          </Typography>
+        )}
       </Box>
 
       {/* Right Side - Image/Gradient */}
-      <Box
-        width={isSmallScreen ? "0" : "60%"}
-        height={isSmallScreen ? "0" : "100%"}
-        display={isSmallScreen ? "none" : "block"}
-        sx={{
-          bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
-          background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
-          background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
-          borderRadius: "20px",
-          padding: "55px",
-        }}
-      >
-        <Typography
-          variant="h3"
-          sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
-        >
-          Introducing
-        </Typography>
-        <Typography
-          variant="h3"
+      {!isSmallScreen && (
+        <Box
+          width="60%"
+          height="100%"
           sx={{
-            fontWeight: "bold",
-            color: "#63C2CF",
-            fontFamily: "Poppins",
-            marginBottom: "10px",
+            background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
+            borderRadius: "20px",
+            padding: "55px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          Education Bot
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "Poppins",
-            color: "#444444",
-            fontSize: "15px",
-            lineHeight: "1.5",
-          }}
-        >
-          Effortlessly navigate your academic journey with our AI-driven
-          customer support bot.
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontFamily: "Poppins",
-            color: "#444444",
-            fontSize: "15px",
-            lineHeight: "1.5",
-            marginTop: "10px",
-            marginBottom: "30px",
-          }}
-        >
-          Whether you need help with course enrollment deadlines, finding the
-          right courses, or learning more about professors, our smart assistant
-          is here to provide instant, accurate answers.
-        </Typography>
-        <img
-          src="/assets/about.png"
-          alt="Description of image"
-          style={{
-            maxWidth: "65%",
-            maxHeight: "75%",
-            display: "block",
-            margin: "0 auto",
-            objectFit: "contain",
-          }}
-        />
-      </Box>
+          <Typography
+            variant="h3"
+            sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
+          >
+            Introducing
+          </Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: "bold",
+              color: "#63C2CF",
+              fontFamily: "Poppins",
+              marginBottom: "10px",
+            }}
+          >
+            Education Bot
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "Poppins",
+              color: "#444444",
+              fontSize: "15px",
+              lineHeight: "1.5",
+            }}
+          >
+            Effortlessly navigate your academic journey with our AI-driven
+            customer support bot.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "Poppins",
+              color: "#444444",
+              fontSize: "15px",
+              lineHeight: "1.5",
+              marginTop: "10px",
+              marginBottom: "30px",
+            }}
+          >
+            Whether you need help with course enrollment deadlines, finding the
+            right courses, or learning more about professors, our smart
+            assistant is here to provide instant, accurate answers.
+          </Typography>
+          <img
+            src="/assets/about.png"
+            alt="Description of image"
+            style={{
+              maxWidth: "65%",
+              maxHeight: "75%",
+              display: "block",
+              margin: "0 auto",
+              objectFit: "contain",
+            }}
+          />
+        </Box>
+      )}
     </Box>
   );
 };
