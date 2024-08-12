@@ -60,7 +60,7 @@ const Login = () => {
         p={5}
         width={isSmallScreen ? "80%" : "40%"}
         height="100%"
-        padding="55px"
+        padding={isSmallScreen ? "20px" : "55px"}
       >
         {/* Logo */}
         <Box display="flex" alignItems="center" marginBottom="25px">
@@ -259,8 +259,6 @@ const Login = () => {
             padding: "55px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
           }}
         >
           <Typography

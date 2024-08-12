@@ -133,7 +133,7 @@ export default function Home() {
             lineHeight: "40px",
           }}
         >
-          Hi, [Full Name]!
+          Hi there!
         </Typography>
         <Typography
           variant="h4"
