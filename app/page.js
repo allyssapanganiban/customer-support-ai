@@ -1,8 +1,7 @@
 "use client";
 
 import "./globals.css";
-import Chatbot from './components/Chatbot'
-import Login from "./components/Login";
+import Chatbot from "./components/Chatbot";
 import { auth } from "./utils/firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
