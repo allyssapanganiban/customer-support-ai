@@ -59,8 +59,10 @@ const Login = () => {
         justifyContent="center"
         p={5}
         width={isSmallScreen ? "80%" : "40%"}
-        height="100%"
+        height={isSmallScreen ? "75%" : "100%"}
+        borderRadius={isSmallScreen ? "30px" : "0px"}
         padding={isSmallScreen ? "20px" : "55px"}
+        bgcolor={isSmallScreen ? "rgba(255, 255, 255, 0.5)" : "white"}
       >
         {/* Logo */}
         <Box display="flex" alignItems="center" marginBottom="25px">
