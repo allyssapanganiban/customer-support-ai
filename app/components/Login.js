@@ -182,10 +182,10 @@ const Login = () => {
           padding: "55px",
         }}
       >
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins", marginBottom: "10px" }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins", marginBottom: "5px" }}>
           Introducing
         </Typography>
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "20px" }}>
+        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "15px" }}>
           Education Bot
         </Typography>
         <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5" }}>
@@ -194,6 +194,16 @@ const Login = () => {
         <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "black", fontSize: "15px", lineHeight: "1.5", marginTop: "10px" }}>
           Whether you need help with course enrollment deadlines, finding the right courses, or learning more about professors, our smart assistant is here to provide instant, accurate answers.
         </Typography>
+        <img
+            src="/assets/about.png"
+            alt="Description of image"
+            style={{
+                width: "60%",
+                height: "40%",
+                borderRadius: "20px",
+                // objectFit: "cover",
+            }}
+        />
       </Box>
     </Box>
        
