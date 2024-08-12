@@ -100,6 +100,7 @@ const Login = () => {
         </Typography>
 
         {/* Sign Up Link */}
+        {/* Sign Up Link */}
         <Typography variant="body2" fontFamily="Poppins" marginBottom="30px">
           {isSignUp ? "Already have an account? " : "New to Education Bot? "}
           <Link
@@ -202,8 +203,6 @@ const Login = () => {
           variant="outlined"
           fullWidth
           margin="normal"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
           InputLabelProps={{
             sx: {
               fontSize: "14px",
@@ -241,8 +240,6 @@ const Login = () => {
           type="password"
           fullWidth
           margin="normal"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
           InputLabelProps={{
             sx: {
               fontFamily: "Poppins",
@@ -260,14 +257,7 @@ const Login = () => {
           }}
         />
 
-        {/* Error Message */}
-        {error && (
-          <Typography color="error" sx={{ marginTop: 2 }}>
-            {error}
-          </Typography>
-        )}
-
-        {/* Sign In/Sign Up Button */}
+        {/* Sign In Button */}
         <Button
           variant="contained"
           color="primary"
@@ -282,20 +272,20 @@ const Login = () => {
             fontFamily: "Poppins",
             bgcolor: "#63C2CF",
             boxShadow: "none",
+            boxShadow: "none",
             "&:hover": {
               bgcolor: "#4DA9B6",
               boxShadow: "none",
             },
           }}
         >
-          {isSignUp ? "Sign Up" : "Sign In"}
+          Sign in
         </Button>
 
         {/* Google Sign In Button */}
         <Button
           variant="outlined"
           fullWidth
-          onClick={handleGoogleSignIn}
           sx={{
             marginTop: 2,
             borderRadius: "10px",
@@ -328,8 +318,12 @@ const Login = () => {
         width={isSmallScreen ? "0" : "60%"}
         height={isSmallScreen ? "0" : "100%"}
         display={isSmallScreen ? "none" : "block"}
+        width={isSmallScreen ? "0" : "60%"}
+        height={isSmallScreen ? "0" : "100%"}
+        display={isSmallScreen ? "none" : "block"}
         sx={{
           bgcolor: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
+          background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
           background: "linear-gradient(to bottom, #C1EDF3, #F4EFC5)",
           borderRadius: "20px",
           padding: "55px",
@@ -393,6 +387,7 @@ const Login = () => {
         />
       </Box>
     </Box>
+       
   );
 };
 
