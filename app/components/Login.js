@@ -6,7 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../utils/firebaseConfig"; 
+import { auth } from "../utils/firebaseConfig";
 import React from "react";
 import {
   Box,
@@ -96,7 +96,6 @@ const Login = () => {
           sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
         >
           {isSignUp ? "Create an Account" : "Welcome back!"}
-          Welcome back!
         </Typography>
 
         {/* Sign Up Link */}
@@ -151,41 +150,6 @@ const Login = () => {
             />
           </>
         )}
-        {/* Name Input */}
-        <Typography
-          sx={{
-            lineHeight: "0px",
-            fontSize: "14px",
-            fontWeight: "bold",
-            color: "black",
-            fontFamily: "Poppins",
-          }}
-        >
-          Name
-        </Typography>
-        <TextField
-          placeholder="Enter your name"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            sx: {
-              fontFamily: "Poppins",
-            },
-          }}
-          InputProps={{
-            sx: {
-              fontSize: "14px",
-              borderRadius: "10px",
-              fontFamily: "Poppins",
-              marginBottom: "20px",
-              "& .MuiInputBase-input": {
-                paddingY: "8px",
-              },
-            },
-          }}
-        />
-
         {/* Email Input */}
         <Typography
           sx={{
@@ -281,43 +245,11 @@ const Login = () => {
         >
           Sign in
         </Button>
-
-        {/* Google Sign In Button */}
-        <Button
-          variant="outlined"
-          fullWidth
-          sx={{
-            marginTop: 2,
-            borderRadius: "10px",
-            paddingY: 1.5,
-            color: "black",
-            borderColor: "#63C2CF",
-            borderWidth: "2px",
-            textTransform: "none",
-            fontFamily: "Poppins",
-            fontWeight: "bold",
-            "&:hover": {
-              borderColor: "#63C2CF",
-              borderWidth: "2px",
-            },
-          }}
-          startIcon={
-            <img
-              src="/assets/google-icon.png"
-              alt="Google Icon"
-              style={{ height: 20 }}
-            />
-          }
-        >
-          Sign in with Google
-        </Button>
       </Box>
 
       {/* Right Side - Image/Gradient */}
       <Box
         width={isSmallScreen ? "0" : "60%"}
-        height={isSmallScreen ? "0" : "100%"}
-        display={isSmallScreen ? "none" : "block"}
         height={isSmallScreen ? "0" : "100%"}
         display={isSmallScreen ? "none" : "block"}
         sx={{
@@ -386,7 +318,6 @@ const Login = () => {
         />
       </Box>
     </Box>
-       
   );
 };
 
