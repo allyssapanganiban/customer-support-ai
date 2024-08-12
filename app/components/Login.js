@@ -1,15 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Box, Typography, TextField, Button, Link, Stack } from "@mui/material";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../utils/firebaseConfig"; // Assuming you've set up Google provider
+import { auth } from "../utils/firebaseConfig"; 
 import React from "react";
-import { Box, Typography, TextField, Button, Link, Stack, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Link,
+  Stack,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -41,7 +49,7 @@ const Login = () => {
     }
   };
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box
@@ -50,7 +58,9 @@ const Login = () => {
       alignItems="center"
       justifyContent="center"
       height="100vh"
-      bgcolor={isSmallScreen ? "linear-gradient(to bottom, #C1EDF3, #F4EFC5)" : "white"}
+      bgcolor={
+        isSmallScreen ? "linear-gradient(to bottom, #C1EDF3, #F4EFC5)" : "white"
+      }
     >
       {/* Left Side - Login Form */}
       <Box
@@ -76,9 +86,6 @@ const Login = () => {
             sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
           >
             Education Bot
-          <img src="/assets/logo.png" alt="Education Bot Logo" style={{ height: 40 }} />
-          <Typography variant="h6" component="div" sx={{fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
-          Education Bot
           </Typography>
         </Box>
 
@@ -89,7 +96,6 @@ const Login = () => {
           sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
         >
           {isSignUp ? "Create an Account" : "Welcome back!"}
-        <Typography variant="h4" gutterBottom sx={{fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
           Welcome back!
         </Typography>
 
@@ -103,9 +109,6 @@ const Login = () => {
             fontWeight="bold"
           >
             {isSignUp ? "Sign in." : "Create an account."}
-          New to Education Bot?{" "}
-          <Link href="#" color="#63C2CF" fontWeight="bold">
-            Create an account.
           </Link>
         </Typography>
 
@@ -148,8 +151,16 @@ const Login = () => {
           </>
         )}
         {/* Name Input */}
-        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
-            Name
+        <Typography
+          sx={{
+            lineHeight: "0px",
+            fontSize: "14px",
+            fontWeight: "bold",
+            color: "black",
+            fontFamily: "Poppins",
+          }}
+        >
+          Name
         </Typography>
         <TextField
           placeholder="Enter your name"
@@ -159,17 +170,17 @@ const Login = () => {
           InputLabelProps={{
             sx: {
               fontFamily: "Poppins",
-            }
+            },
           }}
           InputProps={{
-            sx: { 
-                fontSize: '14px',
-                borderRadius: "10px",
-                fontFamily: "Poppins",
-                marginBottom: "20px",
-                "& .MuiInputBase-input": {
-                    paddingY: "8px",
-                },
+            sx: {
+              fontSize: "14px",
+              borderRadius: "10px",
+              fontFamily: "Poppins",
+              marginBottom: "20px",
+              "& .MuiInputBase-input": {
+                paddingY: "8px",
+              },
             },
           }}
         />
@@ -185,7 +196,6 @@ const Login = () => {
           }}
         >
           Email
-
         </Typography>
         <TextField
           placeholder="Enter your name"
@@ -224,8 +234,6 @@ const Login = () => {
           }}
         >
           Password
-        <Typography sx={{lineHeight: '0px', fontSize: "14px", fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
-            Password
         </Typography>
         <TextField
           placeholder="Enter your password"
@@ -266,8 +274,7 @@ const Login = () => {
           fullWidth
           onClick={handleSubmit}
           boxShadow="none"
-
-          sx={{ 
+          sx={{
             marginTop: 3,
             borderRadius: "10px",
             paddingY: 1.5,
@@ -330,72 +337,62 @@ const Login = () => {
       >
         <Typography
           variant="h3"
-          sx={{
-            fontWeight: "bold",
-            color: "black",
-            fontFamily: "Poppins",
-            marginBottom: "20px",
-          }}
+          sx={{ fontWeight: "bold", color: "black", fontFamily: "Poppins" }}
         >
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "black", fontFamily: "Poppins"}}>
           Introducing
         </Typography>
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: "#63C2CF", fontFamily: "Poppins", marginBottom: "10px" }}>
         <Typography
           variant="h3"
           sx={{
             fontWeight: "bold",
             color: "#63C2CF",
             fontFamily: "Poppins",
-            marginBottom: "20px",
+            marginBottom: "10px",
           }}
         >
           Education Bot
         </Typography>
-        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "#444444", fontSize: "15px", lineHeight: "1.5" }}>
-          Effortlessly navigate your academic journey with our AI-driven customer support bot.
         <Typography
           variant="body1"
           sx={{
             fontFamily: "Poppins",
-            color: "black",
-            fontSize: "18px",
+            color: "#444444",
+            fontSize: "15px",
             lineHeight: "1.5",
           }}
         >
           Effortlessly navigate your academic journey with our AI-driven
-          customer support bot.
+          customer support bot. Effortlessly navigate your academic journey with
+          our AI-driven customer support bot.
         </Typography>
         <Typography
           variant="body1"
           sx={{
             fontFamily: "Poppins",
-            color: "black",
-            fontSize: "18px",
+            color: "#444444",
+            fontSize: "15px",
             lineHeight: "1.5",
             marginTop: "10px",
+            marginBottom: "30px",
           }}
         >
           Whether you need help with course enrollment deadlines, finding the
           right courses, or learning more about professors, our smart assistant
           is here to provide instant, accurate answers.
-        <Typography variant="body1" sx={{ fontFamily: "Poppins", color: "#444444", fontSize: "15px", lineHeight: "1.5", marginTop: "10px", marginBottom: "30px" }}>
-          Whether you need help with course enrollment deadlines, finding the right courses, or learning more about professors, our smart assistant is here to provide instant, accurate answers.
         </Typography>
         <img
-            src="/assets/about.png"
-            alt="Description of image"
-            style={{
-                maxWidth: "65%",
-                maxHeight: "75%",
-                display: "block",
-                margin: "0 auto",
-                objectFit: "contain",
-            }}
+          src="/assets/about.png"
+          alt="Description of image"
+          style={{
+            maxWidth: "65%",
+            maxHeight: "75%",
+            display: "block",
+            margin: "0 auto",
+            objectFit: "contain",
+          }}
         />
       </Box>
     </Box>
-       
   );
 };
 
