@@ -318,7 +318,6 @@ const Login = () => {
         width={isSmallScreen ? "0" : "60%"}
         height={isSmallScreen ? "0" : "100%"}
         display={isSmallScreen ? "none" : "block"}
-        width={isSmallScreen ? "0" : "60%"}
         height={isSmallScreen ? "0" : "100%"}
         display={isSmallScreen ? "none" : "block"}
         sx={{
