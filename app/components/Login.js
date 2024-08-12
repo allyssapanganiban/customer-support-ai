@@ -304,8 +304,8 @@ const Login = () => {
             }}
           >
             Whether you need help with course enrollment deadlines, finding the
-            right courses, or learning more about professors, our smart
-            assistant is here to provide instant, accurate answers.
+            right scholarships, or learning more about events or campus life,
+            our smart assistant is here to provide instant, accurate answers.
           </Typography>
           <img
             src="/assets/about.png"
