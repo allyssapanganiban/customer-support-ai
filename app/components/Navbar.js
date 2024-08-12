@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
-import { auth } from "../utils/firebaseConfig"; // Make sure this path is correct
+import { auth } from "../utils/firebaseConfig"; 
 
 const Navbar = () => {
   const router = useRouter();
@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleSignOut = async () => {
     try {
       await signOut(auth);
-      router.push("/login"); // Redirect to login page after signing out
+      router.push("/login"); 
     } catch (error) {
       console.error("Failed to sign out:", error);
     }
@@ -39,7 +39,7 @@ const Navbar = () => {
               boxShadow: "none",
             },
           }}
-          onClick={handleSignOut} // Add sign out handler here
+          onClick={handleSignOut} 
         >
           Sign out
         </Button>

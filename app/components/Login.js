@@ -287,8 +287,7 @@ const Login = () => {
           }}
         >
           Effortlessly navigate your academic journey with our AI-driven
-          customer support bot. Effortlessly navigate your academic journey with
-          our AI-driven customer support bot.
+          customer support bot.
         </Typography>
         <Typography
           variant="body1"
