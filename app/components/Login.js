@@ -62,7 +62,7 @@ const Login = () => {
         height={isSmallScreen ? "75%" : "100%"}
         borderRadius={isSmallScreen ? "30px" : "0px"}
         padding={isSmallScreen ? "20px" : "55px"}
-        bgcolor={isSmallScreen ? "rgba(255, 255, 255, 0.5)" : "white"}
+        bgcolor={isSmallScreen ? "rgba(255, 255, 255, 0.7)" : "white"}
       >
         {/* Logo */}
         <Box display="flex" alignItems="center" marginBottom="25px">
